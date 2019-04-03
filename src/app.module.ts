@@ -1,5 +1,4 @@
 import { Module } from '@nestjs/common';
-import { AppService } from './app.service';
 import { MessagesController } from './messages/messages.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
@@ -13,6 +12,6 @@ import { MessageService } from './services/message.service';
     TypeOrmModule.forFeature( [Message] ),
   ],
   controllers: [MessagesController],
-  providers: [AppService, MessageService],
+  providers: [MessageService],
 })
 export class AppModule {}
