@@ -19,7 +19,7 @@ export class MessagesController {
     @Get()
     getAll(@Res() response) {
       this.messageServices.getAll().then( messageList => {
-        response.status(HttpStatus.OK).json({message: 'error retrieving the messages'});
+        response.status(HttpStatus.OK).json(messageList);
       }).catch( () => {
         response.status(HttpStatus.FORBIDDEN).json({message: 'error retrieving the messages'});
       });
